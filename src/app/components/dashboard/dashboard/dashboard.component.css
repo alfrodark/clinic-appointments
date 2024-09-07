@@ -1,0 +1,230 @@
+.dashboard-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.info-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.info-card:hover {
+  transform: scale(1.05);
+}
+
+.card-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-body {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.client-dashboard-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.button-logout {
+  background-color: rgb(230, 28, 61);
+  color: white;
+  padding: 10px;
+  font-size: large;
+  border:rgb(9, 12, 8);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #a253da;
+  font-size: large;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(241, 239, 145);
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f4f4f4;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+li:hover {
+  background-color: #e0e0e0;
+}
+
+.nav{
+  font-size: larger;
+}
+
+.page-title{
+  color: rgb(240, 22, 131);
+}
+
+.main-container {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: large;
+  text-align: justify;
+  background-color: rgb(230, 225, 225);
+}
+
+.sub-container{
+  border-radius: 10px;
+  text-align: justify;
+  background-color: white;
+}
+
+table i{
+  width: 100%;
+  border-collapse: separate;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-border {
+  border: 3px solid #837f7f;
+}
+
+.mt-4 {
+  margin-top: 5px;
+}
+
+.customWidth{
+  width: 100px;
+}
+
+table tbody tr:hover i{
+  cursor: pointer;
+  display: inline;
+  transition: .3s all ease-out;
+}
+table a{
+  color: #000;
+  text-decoration: none;
+}
+.slideOff {
+  transform: scale(0);
+ opacity: 0;
+ transition: .3s all ease-out;
+ }
+
+ .slideOn {
+   transform: scale(1);
+   opacity: 1;
+   transition: .3s all ease-in;
+ }
+
+ @media screen and (max-width: 992px){
+   table tbody tr i{
+     /* display: none; */
+     transition: .3s all ease-in;
+   }
+   table {
+     display: block;
+     overflow-x: auto;
+     white-space: nowrap;
+ }
+
+ }
+
+.buttons-common{
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.card-body{
+  border-radius: 10px;
+  background-color: antiquewhite;
+  max-width: 150px;
+  height: 120px;
+  margin-left: 25px;
+  align-content: center;
+}
+
+.mat-cell {
+  font-size: larger;
+  color: black;
+  background-color: #f5ebeb;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.button-panel{
+  margin-right: 100px;
+}
+
+.button-doctors{
+  background-color: rgb(71, 223, 78);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.button-patients{
+  background-color: rgb(87, 204, 224);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.button-appointments{
+  background-color: rgb(149, 98, 231);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+/* Flexbox container for horizontal alignment */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 16px;
+  gap: 16px; /* Add space between the cards */
+}
+
+/* Default card styles for desktop (horizontal layout) */
+.responsive-card {
+  width: 30%; /* Adjust width to fit 3 cards in a row */
+  margin: 8px;
+}
+
+/* Tablet screens (600px - 959px) */
+@media only screen and (max-width: 959px) and (min-width: 600px) {
+  .responsive-card {
+    width: 45%; /* Adjust width to fit 2 cards in a row */
+  }
+}
+
+/* Mobile screens (less than 600px) */
+@media only screen and (max-width: 599px) {
+  .responsive-card {
+    width: 100%; /* Full width on mobile for better readability */
+    margin-bottom: 16px;
+  }
+}

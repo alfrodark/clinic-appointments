@@ -1,0 +1,86 @@
+.doctors-container {
+  max-width: 500px;
+  margin: auto;
+  height: auto;
+  font-size: large;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-container {
+  padding: 5px;
+  border-radius: 20px;
+  height: auto;
+  text-align: justify;
+  background-color: rgb(236, 234, 234);
+}
+
+.sub-container{
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.increased-size {
+ font-size: large;
+ border-radius: 20px;
+ border-color: rgb(236, 61, 113);
+ width: 250px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.button-cancel {
+  padding: 10px;
+  background-color: #f34689;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.button-submit{
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #58f039;
+  color: black;
+
+}
+
+mat-icon {
+  color: rgb(240, 94, 126);
+  cursor: pointer;
+  justify-self: center;
+}
+
+.mat-header-cell {
+  font-size:large;
+  color: black;
+  font-weight:bolder;
+  justify-content: center;
+
+}
+
+.page-title{
+  color: rgb(240, 22, 131);
+}

@@ -1,0 +1,35 @@
+.header{
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer{
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  padding: 1px;
+}
+
+.email-link {
+  text-decoration: none;
+  color: #f13ea7;
+  font-size: 1.2em;
+}
+
+.email-link i {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+

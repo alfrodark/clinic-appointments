@@ -1,0 +1,103 @@
+<div class="main-container">
+  <div class="client-form-container">
+    <div class="sub-container">
+      <div class="client-form-container">
+        <div>
+          <h2>Add Appointment</h2>
+          <button class="button-cancel" routerLink="/appointments">Cancel</button>
+          <form [formGroup]="addAppointmentForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+              <mat-label>Patient Name</mat-label>
+              <input matInput formControlName="patientName" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Doctor Name</mat-label>
+              <input matInput formControlName="doctorName" />
+            </mat-form-field>
+
+            <mat-form-field class="input-container">
+              <mat-label>Appointment Date</mat-label>
+              <input matInput [matDatepicker]="appointmentDatePicker" formControlName="date" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="appointmentDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #appointmentDatePicker></mat-datepicker>
+              <mat-error *ngIf="addAppointmentForm.get('date')!.hasError('required')">Appointment Date is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input-container">
+              <mat-label>Select Start Time</mat-label>
+              <input matInput [ngxTimepicker]="startTimePicker" formControlName="startTime" placeholder="Choose time" readonly>
+              <ngx-material-timepicker-toggle matSuffix [for]="startTimePicker"></ngx-material-timepicker-toggle>
+              <ngx-material-timepicker #startTimePicker></ngx-material-timepicker>
+            </mat-form-field>
+
+            <!-- <mat-form-field class="input-container">
+              <mat-label>Select Start Time</mat-label>
+              <input matInput [ngxMatTimepicker]="picker" formControlName="startTime" placeholder="Choose time" [(ngModel)]="selectedStartTime">
+              <ngx-mat-timepicker-toggle matSuffix [for]="picker"></ngx-mat-timepicker-toggle>
+              <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+            </mat-form-field> -->
+
+            <!-- <mat-form-field class="input-container">
+              <mat-label>Select End Time</mat-label>
+              <input matInput [ngxMatTimepicker]="picker2" formControlName="endTime" placeholder="Choose time" [(ngModel)]="selectedEndTime">
+              <ngx-mat-timepicker-toggle matSuffix [for]="picker2"></ngx-mat-timepicker-toggle>
+              <ngx-mat-timepicker #picker2></ngx-mat-timepicker>
+            </mat-form-field> -->
+
+            <mat-form-field class="input-container">
+              <mat-label>Select End Time</mat-label>
+              <input matInput [ngxTimepicker]="endTimePicker" formControlName="endTime" placeholder="Choose time" readonly>
+              <ngx-material-timepicker-toggle matSuffix [for]="endTimePicker"></ngx-material-timepicker-toggle>
+              <ngx-material-timepicker #endTimePicker></ngx-material-timepicker>
+            </mat-form-field>
+
+            <mat-form-field class="input-container">
+              <mat-label>Date Created</mat-label>
+              <input matInput [matDatepicker]="dateCreatedPicker" formControlName="createdAt" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="dateCreatedPicker"></mat-datepicker-toggle>
+              <mat-datepicker #dateCreatedPicker></mat-datepicker>
+              <mat-error *ngIf="addAppointmentForm.get('createdAt')!.hasError('required')">Date Created is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Notes</mat-label>
+              <textarea matInput placeholder="Enter Notes" formControlName="notes"></textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Status</mat-label>
+              <mat-select formControlName="status">
+                <mat-option value="Scheduled">Scheduled</mat-option>
+                <mat-option value="Cancelled">Cancelled</mat-option>
+                <mat-option value="Completed">Completed</mat-option>
+              </mat-select>
+              <!-- <mat-error *ngIf="appointmentForm.get('status')!.hasError('required')">Status is required</mat-error> -->
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="fill">
+              <mat-label>Photo Url</mat-label>
+              <input matInput formControlName="photoUrl" />
+            </mat-form-field> -->
+
+            <!-- <div>
+              <mat-label class="upload-input">Upload Photo</mat-label>
+              <input class="select-photo" type="file" (change)="onFileSelected($event)" accept="image/*">
+            </div> -->
+            <!-- <div *ngIf="uploadPercent !== undefined">
+              Uploading: {{ uploadPercent }}%
+            </div> -->
+            <!-- <div>
+              <img *ngIf="imageUrl" [src]="imageUrl" alt="Patient Photo" style="max-width: 100%;">
+            </div> -->
+            <button class="button-create" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+

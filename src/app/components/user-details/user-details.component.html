@@ -1,0 +1,39 @@
+<app-dashboard-header></app-dashboard-header>
+<div class="main-container">
+  <div class="user-details-container">
+    <h1>User Details</h1>
+      <div class="nav">
+        <nav>
+          <button class="button-doctors" mat-raised-button color="accent" routerLink="/doctors">View Doctors List</button>
+          <button class="button-home" mat-raised-button color="accent" routerLink="/home">View Dashboard</button>
+          <button class="button-update" mat-raised-button color="primary" routerLink="/update-user">Update User</button>
+        </nav>
+      </div>
+    <div class="list-container">
+      <div class="user-details-container">
+        <div *ngIf="user">
+          <mat-card class="card-custom">
+            <mat-card-header>
+              <mat-card-title>User Details</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div *ngIf="user">
+                <p><strong>Display Name:</strong> {{ user.displayName }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <!-- <p><strong>Phone:</strong> {{ user.phone }}</p> -->
+                <div *ngIf="user.photoUrl">
+                  Photo:
+                  <img class="photo-size" [src]="user.photoUrl" alt="User Photo">
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

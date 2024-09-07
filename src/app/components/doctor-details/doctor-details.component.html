@@ -1,0 +1,47 @@
+<!-- doctor-details.component.html -->
+<div class="main-container">
+  <div class="client-details-container">
+    <h1>Doctor Details</h1>
+    <div class="nav">
+      <nav>
+        <button class="button-list" mat-raised-button color="primary" routerLink="/doctors">View Doctor List</button>
+        <!-- <button class="add-button" mat-raised-button color="accent" [routerLink]="['/loans/new']">Create Loan</button> -->
+      </nav>
+    </div>
+  <div class="list-container">
+    <div class="client-details-container">
+      <div *ngIf="doctor">
+        <mat-card class="card-custom">
+          <mat-card-header>
+            <mat-card-title>{{ doctor.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="card-content-custom">
+            <p>Photo:</p>
+            <img class="photo-size" *ngIf="doctor.photoUrl" [src]="doctor.photoUrl" alt="Doctor Photo">
+            <div>
+              <strong>Name:</strong> {{ doctor.name }}
+            </div>
+            <div>
+              <strong>Email:</strong> {{ doctor.email }}
+            </div>
+            <div>
+              <strong>Phone:</strong> {{ doctor.phoneNumber }}
+            </div>
+            <div>
+              <strong>Specialization:</strong> {{ doctor.specialization }}
+            </div>
+            <div>
+              <strong>Date Of Birth:</strong> {{ formatTimestamp(doctor.dateOfBirth.toString()) | date }}
+            </div>
+            <div>
+              <strong>Gender:</strong> {{ doctor.gender }}
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    <ng-template #loading>
+      <p>Loading Doctor details...</p>
+    </ng-template>
+  </div>
+
+</div>

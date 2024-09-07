@@ -1,0 +1,62 @@
+<!-- signup.component.html -->
+
+<div class="main-container">
+  <div class="signUp-container">
+    <div class="sub-container">
+      <div class="container text-center p-5">
+        <div>
+          <img src="../../../../assets/img/kwickkappclinic.png"  alt="logo" height="100px">
+        </div>
+      <h2 class="display-4">Clinic
+      <i class="fa fa-angle-double-up text-success" aria-hidden="true"></i>
+        Appointments App
+      </h2>
+      </div>
+      <h2>Sign Up</h2>
+      <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <mat-card class="card-custom">
+          <mat-card-header>
+            <mat-card-title></mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="card-content-custom">
+            <mat-form-field class="input-container" appearance="fill">
+              <mat-label>Display Name</mat-label>
+              <input matInput formControlName="displayName" type="text" placeholder="Enter your name">
+            </mat-form-field>
+            <mat-form-field class="input-container" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" type="email" placeholder="Enter your email">
+              <mat-error *ngIf="signUpForm.get('email')!.hasError('required')">Email is required</mat-error>
+              <mat-error *ngIf="signUpForm.get('email')!.hasError('email')">Invalid email format</mat-error>
+            </mat-form-field>
+            <mat-form-field class="input-container" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" type="password" placeholder="Enter your password">
+              <mat-error *ngIf="signUpForm.get('password')!.hasError('required')">Password is required</mat-error>
+              <mat-error *ngIf="signUpForm.get('password')!.hasError('minlength')">Password must be at least 6 characters long</mat-error>
+            </mat-form-field>
+            <mat-form-field class="input-container" appearance="fill">
+              <mat-label>Confirm Password</mat-label>
+              <input matInput formControlName="confirmPassword" type="password" placeholder="Confirm your password">
+              <mat-error *ngIf="signUpForm.get('confirmPassword')!.hasError('required')">Confirm Password is required</mat-error>
+              <mat-error *ngIf="signUpForm.get('confirmPassword')!.value !== signUpForm.get('password')!.value">Passwords do not match</mat-error>
+            </mat-form-field>
+          </mat-card-content>
+        </mat-card>
+        <br>
+        <br>
+        <div>
+          <button class="button-signUp" mat-raised-button color="accent" type="submit">Sign Up</button>
+        </div>
+        <br>
+        <br>
+        <div class="mt-5">
+          <button type="submit" class="button-redirect" mat-raised-button color="accent" routerLink="/">Already Registered? Click to Sign In now</button>
+          <br>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

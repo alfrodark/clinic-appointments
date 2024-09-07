@@ -1,0 +1,50 @@
+<!-- appointment-dialog.component.html -->
+<h1 mat-dialog-title>{{ data.action }} Appointment</h1>
+<div mat-dialog-content>
+  <form [formGroup]="appointmentForm" (ngSubmit)="onSubmitClick()">
+    <mat-form-field appearance="fill">
+      <mat-label>Patient Name</mat-label>
+      <input matInput formControlName="patientName" placeholder="Enter patient's name">
+      <mat-error *ngIf="appointmentForm.get('patientName')!.hasError('required')">Patient Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Doctor Name</mat-label>
+      <input matInput formControlName="doctorName" placeholder="Enter doctor's name">
+      <mat-error *ngIf="appointmentForm.get('doctorName')!.hasError('required')">Doctor Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="appointmentForm.get('date')!.hasError('required')">Date is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Start Time</mat-label>
+      <input matInput formControlName="startTime" placeholder="Enter start time">
+      <mat-error *ngIf="appointmentForm.get('startTime')!.hasError('required')">Start Time is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>End Time</mat-label>
+      <input matInput formControlName="endTime" placeholder="Enter end time">
+      <mat-error *ngIf="appointmentForm.get('endTime')!.hasError('required')">End Time is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Notes</mat-label>
+      <textarea matInput formControlName="notes" placeholder="Enter notes"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="Scheduled">Scheduled</mat-option>
+        <mat-option value="Cancelled">Cancelled</mat-option>
+        <mat-option value="Completed">Completed</mat-option>
+      </mat-select>
+      <mat-error *ngIf="appointmentForm.get('status')!.hasError('required')">Status is required</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="false" [disabled]="!appointmentForm.valid">Submit</button>
+</div>

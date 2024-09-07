@@ -1,0 +1,90 @@
+
+<app-dashboard-header></app-dashboard-header>
+<div class="main-container">
+  <div class="client-dashboard-container">
+    <div class="sub-container">
+      <div class="client-dashboard-container">
+        <h2 class="page-title">Clinic Appointments Dashboard</h2>
+        <div class="button-panel">
+          <button class="button-doctors" mat-raised-button color="accent" routerLink="/doctors">Doctors</button>
+          <button class="button-patients" mat-raised-button color="accent" routerLink="/patients">Patients</button>
+          <button class="button-appointments" mat-raised-button color="accent" routerLink="/appointments">Appointments</button>
+          <button class="buttons-common" mat-raised-button color="accent" routerLink="/user-details">User Details</button>
+        </div>
+        <br>
+        <br>
+        <div>
+          <!-- <div class="dashboard-info">
+            <div class="info-card">
+              <div class="card-header">Patients</div>
+              <div class="card-body"><h3>Total Patients: {{ totalPatients$ | async }}</h3></div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-header">Doctors</div>
+              <div class="card-body"><h3>Total Doctors: {{ totalDoctors$ | async }}</h3></div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-header">Appointments</div>
+              <div class="card-body"><h3>Total Appointments: {{ totalAppointments$ | async }}</h3></div>
+            </div>
+          </div> -->
+
+          <div class="card-container">
+            <mat-card class="responsive-card">
+              <!-- <mat-card-header>
+                <mat-card-title>Card 1</mat-card-title>
+                <mat-card-subtitle>Subtitle 1</mat-card-subtitle>
+              </mat-card-header> -->
+              <mat-card-content>
+                <div class="info-card">
+                  <div class="card-header">Patients</div>
+                  <div class="card-body"><h3>Total Patients: {{ totalPatients$ | async }}</h3></div>
+                </div>
+              </mat-card-content>
+              <!-- <mat-card-actions>
+                <button mat-button>Action 1</button>
+              </mat-card-actions> -->
+            </mat-card>
+
+            <mat-card class="responsive-card">
+              <!-- <mat-card-header>
+                <mat-card-title>Card 2</mat-card-title>
+                <mat-card-subtitle>Subtitle 2</mat-card-subtitle>
+              </mat-card-header> -->
+              <mat-card-content>
+                <div class="info-card">
+                  <div class="card-header">Doctors</div>
+                  <div class="card-body"><h3>Total Doctors: {{ totalDoctors$ | async }}</h3></div>
+                </div>
+              </mat-card-content>
+              <!-- <mat-card-actions>
+                <button mat-button>Action 2</button>
+              </mat-card-actions> -->
+            </mat-card>
+
+            <mat-card class="responsive-card">
+              <!-- <mat-card-header>
+                <mat-card-title>Card 3</mat-card-title>
+                <mat-card-subtitle>Subtitle 3</mat-card-subtitle>
+              </mat-card-header> -->
+              <mat-card-content>
+                <div class="info-card">
+                  <div class="card-header">Appointments</div>
+                  <div class="card-body"><h3>Total Appointments: {{ totalAppointments$ | async }}</h3></div>
+                </div>
+              </mat-card-content>
+              <!-- <mat-card-actions>
+                <button mat-button>Action 3</button>
+              </mat-card-actions> -->
+            </mat-card>
+          </div>
+
+
+        </div>
+
+    </div>
+  </div>
+</div>
+</div>

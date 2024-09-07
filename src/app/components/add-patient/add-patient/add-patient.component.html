@@ -1,0 +1,74 @@
+<div class="main-container">
+  <div class="client-form-container">
+    <div class="sub-container">
+      <div class="client-form-container">
+        <div>
+          <h2>Add Patient</h2>
+          <button class="button-cancel" routerLink="/patients">Cancel</button>
+          <form [formGroup]="addPatientForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Phone Number</mat-label>
+              <input matInput formControlName="phoneNumber" />
+            </mat-form-field>
+
+            <mat-form-field class="input-container">
+              <mat-label>Gender</mat-label>
+              <mat-select formControlName="gender">
+                <mat-option value="Male">Male</mat-option>
+                <mat-option value="Female">Female</mat-option>
+              </mat-select>
+              <mat-error *ngIf="addPatientForm.get('gender')!.hasError('required')">Gender is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input-container">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker1" formControlName="dateOfBirth" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+              <mat-error *ngIf="addPatientForm.get('dateOfBirth')!.hasError('required')">Date of Birth is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input-container">
+              <mat-label>Date Created</mat-label>
+              <input matInput [matDatepicker]="picker2" formControlName="createdAt" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+              <mat-error *ngIf="addPatientForm.get('createdAt')!.hasError('required')">Date Created is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Photo Url</mat-label>
+              <input matInput formControlName="photoUrl" />
+            </mat-form-field>
+
+            <div>
+              <mat-label class="upload-input">Upload Photo</mat-label>
+              <input class="select-photo" type="file" (change)="onFileSelected($event)" accept="image/*">
+            </div>
+            <div *ngIf="uploadPercent !== undefined">
+              Uploading: {{ uploadPercent }}%
+            </div>
+            <div>
+              <img *ngIf="imageUrl" [src]="imageUrl" alt="Patient Photo" style="max-width: 100%;">
+            </div>
+            <button class="button-create" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+

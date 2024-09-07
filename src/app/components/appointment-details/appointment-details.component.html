@@ -1,0 +1,94 @@
+<!-- doctor-details.component.html -->
+<div class="main-container">
+  <div class="client-details-container">
+    <h1>Appointment Details</h1>
+    <div class="nav">
+      <nav>
+        <button class="button-list" mat-raised-button color="primary" routerLink="/appointments">View Appointments List</button>
+        <!-- <button class="add-button" mat-raised-button color="accent" [routerLink]="['/loans/new']">Create Loan</button> -->
+      </nav>
+    </div>
+  <div class="list-container">
+    <div class="client-details-container">
+      <div *ngIf="appointments">
+        <mat-card class="card-custom">
+          <mat-card-header>
+            <mat-card-title>{{ appointments.patientName }} Appointment Details</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="card-content-custom">
+
+          </mat-card-content>
+
+        </mat-card>
+      </div>
+    <ng-template #loading>
+      <p>Loading Appointment details...</p>
+    </ng-template>
+  </div>
+  <div class="appointment-details-container">
+    <div *ngIf="appointments">
+      <mat-card class="appointment-card">
+        <mat-card-header>
+          <div mat-card-avatar class="doctor-avatar"></div>
+          <mat-card-title>Patient Name: {{ appointments.patientName }}</mat-card-title>
+          <mat-card-subtitle>Doctor Name: {{ appointments.doctorName }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="appointment-info">
+            <mat-icon>event</mat-icon>
+            <p><strong>Appointment Date:</strong> {{ formatTimestamp(appointments.date!.toString()) | date: 'fullDate' }}</p>
+          </div>
+          <mat-divider></mat-divider>
+
+          <div class="appointment-info">
+            <mat-icon>schedule</mat-icon>
+            <p><strong>Start Time:</strong> {{ appointments.startTime.toString() }}</p>
+          </div>
+          <mat-divider></mat-divider>
+
+          <div class="appointment-info">
+            <mat-icon>schedule</mat-icon>
+            <p><strong>End Time:</strong> {{ appointments.endTime.toString() }}</p>
+          </div>
+          <mat-divider></mat-divider>
+
+          <div class="appointment-info">
+            <mat-icon>local_hospital</mat-icon>
+            <p><strong>Patient Name:</strong> {{ appointments.patientName }}</p>
+          </div>
+          <mat-divider></mat-divider>
+
+          <div class="appointment-info">
+            <mat-icon>local_hospital</mat-icon>
+            <p><strong>Doctor Name:</strong> {{ appointments.doctorName }}</p>
+          </div>
+          <mat-divider></mat-divider>
+
+          <div class="appointment-info">
+            <mat-icon>event</mat-icon>
+            <p><strong>Date Created:</strong> {{ formatTimestamp(appointments.createdAt!.toString()) | date: 'fullDate' }}</p>
+          </div>
+          <mat-divider></mat-divider>
+
+          <div class="appointment-info">
+            <mat-icon>flag</mat-icon>
+            <p><strong>Status:</strong> {{ appointments.status }}</p>
+          </div>
+          <mat-divider></mat-divider>
+
+          <div class="appointment-info">
+            <mat-icon>notes</mat-icon>
+            <p><strong>Notes:</strong> {{ appointments.notes }}</p>
+          </div>
+        </mat-card-content>
+
+      </mat-card>
+    </div>
+    </div>
+
+</div>
+
+
+
+

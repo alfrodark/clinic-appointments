@@ -1,0 +1,120 @@
+.patients-container {
+  max-width: 850px;
+  margin: auto;
+  height: auto;
+  font-size: large;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-container {
+  padding: 5px;
+  border-radius: 20px;
+  height: auto;
+  text-align: justify;
+  background-color: rgb(236, 234, 234);
+}
+
+.sub-container{
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.increased-size {
+ font-size: large;
+ border-radius: 20px;
+ border-color: rgb(236, 61, 113);
+ width: 250px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+button {
+  padding: 10px;
+  background-color: #f1a8e2;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.button-signUp{
+  width: 150px;
+  border-radius: 15px;
+  font-size: large;
+}
+
+mat-icon {
+  color: rgb(235, 157, 222);
+  cursor: pointer;
+  justify-self: center;
+  color: black;
+}
+
+.delete-icon{
+  background-color: red;
+}
+
+.mat-header-cell {
+  font-size: medium;
+  color: black;
+  font-weight:bold;
+  justify-content: center;
+
+}
+
+.page-title{
+  color: rgb(240, 22, 131);
+}
+
+button:hover {
+  background-color: rgb(241, 239, 145);
+  color: black;
+}
+
+.button-panel{
+  border-radius: 10px;
+  font-size: large;
+  margin-right: 20px;
+}
+
+.buttons-common{
+  border-radius: 10px;
+}
+
+.card-body{
+  border-radius: 10px;
+  background-color: antiquewhite;
+  max-width: 120px;
+  margin-left: 25px;
+}
+
+.mat-cell {
+  font-size: larger;
+  color: black;
+  background-color: #f5ebeb;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+

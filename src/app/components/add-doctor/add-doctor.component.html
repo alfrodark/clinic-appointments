@@ -1,0 +1,71 @@
+<div class="main-container">
+  <div class="client-form-container">
+    <div class="sub-container">
+      <div class="client-form-container">
+        <div>
+          <h2>Add Doctor</h2>
+          <button class="button-cancel" routerLink="/doctors">Cancel</button>
+          <form [formGroup]="addDoctorForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Phone Number</mat-label>
+              <input matInput formControlName="phoneNumber" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Specialization</mat-label>
+              <input matInput formControlName="specialization" />
+            </mat-form-field>
+
+            <mat-form-field class="input-container">
+              <mat-label>Gender</mat-label>
+              <mat-select formControlName="gender">
+                <mat-option value="Male">Male</mat-option>
+                <mat-option value="Female">Female</mat-option>
+              </mat-select>
+              <mat-error *ngIf="addDoctorForm.get('gender')!.hasError('required')">Gender is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input-container">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="addDoctorForm.get('dateOfBirth')!.hasError('required')">Date of Birth is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Photo Url</mat-label>
+              <input matInput formControlName="photoUrl" />
+            </mat-form-field>
+
+            <div>
+              <mat-label class="upload-input">Upload Photo</mat-label>
+              <input class="select-photo" type="file" (change)="onFileSelected($event)" accept="image/*">
+            </div>
+            <div *ngIf="uploadPercent !== undefined">
+              Uploading: {{ uploadPercent }}%
+            </div>
+            <div>
+              <img *ngIf="imageUrl" [src]="imageUrl" alt="Client Photo" style="max-width: 100%;">
+            </div>
+            <button class="button-create" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+

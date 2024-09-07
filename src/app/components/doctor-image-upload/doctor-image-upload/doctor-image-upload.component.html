@@ -1,0 +1,9 @@
+<!-- doctor-image-upload.component.html -->
+<div class="container">
+  <input type="file" (change)="onFileSelected($event)">
+  <button mat-raised-button color="primary" (click)="onUpload()">Upload</button>
+  <div *ngIf="uploadProgress$ | async as progress">
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+  </div>
+  <img *ngIf="imageURL" [src]="imageURL" alt="Uploaded Image">
+</div>

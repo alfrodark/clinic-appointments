@@ -1,0 +1,115 @@
+<!-- appointments.component.html -->
+
+<div class="main-container">
+  <h1 class="page-title">Appointments</h1>
+  <div>
+    <button class="button-panel" mat-raised-button color="accent" routerLink="/home">Home</button>
+    <button class="button-panel" mat-raised-button color="primary" routerLink="/add-appointment">Add Appointment</button>
+   </div>
+   <br>
+  <div class="patients-container">
+    <div class="sub-container">
+      <table mat-table [dataSource]="appointments$" class="mat-elevation-z8">
+        <!-- Columns -->
+        <ng-container matColumnDef="patientName">
+          <th mat-header-cell *matHeaderCellDef>Patient Name</th>
+          <td mat-cell *matCellDef="let appointment">{{ appointment.patientName }}</td>
+        </ng-container>
+        <!-- <ng-container matColumnDef="doctorName">
+          <th mat-header-cell *matHeaderCellDef>Doctor Name</th>
+          <td mat-cell *matCellDef="let appointment">{{ appointment.doctorName }}</td>
+        </ng-container> -->
+        <!-- <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Appointment Date</th>
+          <td mat-cell *matCellDef="let appointment">{{ formatTimestamp(appointment.date.toString()) | date}}</td>
+        </ng-container> -->
+        <!-- <ng-container matColumnDef="startTime">
+          <th mat-header-cell *matHeaderCellDef>Start Time</th>
+          <td mat-cell *matCellDef="let appointment">{{ appointment.startTime }}</td>
+        </ng-container>
+        <ng-container matColumnDef="endTime">
+          <th mat-header-cell *matHeaderCellDef>End Time</th>
+          <td mat-cell *matCellDef="let appointment">{{ appointment.endTime }}</td>
+        </ng-container>
+        <ng-container matColumnDef="notes">
+          <th mat-header-cell *matHeaderCellDef>Notes</th>
+          <td mat-cell *matCellDef="let appointment">{{ appointment.notes }}</td>
+        </ng-container> -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let appointment">{{ appointment.status }}</td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let appointment">
+            <button mat-icon-button (click)="viewAppointmentDetails(appointment)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" (click)="updateAppointments(appointment)" >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteAppointment(appointment.appointmentId!, appointment.patientName)" >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <!-- Table rows -->
+        <tr mat-header-row *matHeaderRowDef="['patientName', 'status', 'actions']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['patientName', 'status', 'actions']"></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="container"> -->
+  <!-- <h2>Appointments</h2>
+  <button mat-raised-button color="primary" (click)="openDialog('Add')">Add Appointment</button>
+  <table mat-table [dataSource]="appointments" class="mat-elevation-z8"> -->
+    <!-- Columns -->
+    <!-- <ng-container matColumnDef="patientName">
+      <th mat-header-cell *matHeaderCellDef>Patient Name</th>
+      <td mat-cell *matCellDef="let appointment">{{ appointment.patientName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="doctorName">
+      <th mat-header-cell *matHeaderCellDef>Doctor Name</th>
+      <td mat-cell *matCellDef="let appointment">{{ appointment.doctorName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let appointment">{{ appointment.date | date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="startTime">
+      <th mat-header-cell *matHeaderCellDef>Start Time</th>
+      <td mat-cell *matCellDef="let appointment">{{ appointment.startTime }}</td>
+    </ng-container>
+    <ng-container matColumnDef="endTime">
+      <th mat-header-cell *matHeaderCellDef>End Time</th>
+      <td mat-cell *matCellDef="let appointment">{{ appointment.endTime }}</td>
+    </ng-container>
+    <ng-container matColumnDef="notes">
+      <th mat-header-cell *matHeaderCellDef>Notes</th>
+      <td mat-cell *matCellDef="let appointment">{{ appointment.notes }}</td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let appointment">{{ appointment.status }}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let appointment">
+        <button mat-icon-button color="primary" (click)="openDialog('Edit', appointment)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="openDialog('Delete', appointment)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container> -->
+
+    <!-- Table rows -->
+    <!-- <tr mat-header-row *matHeaderRowDef="['patientName', 'doctorName', 'date', 'startTime', 'endTime', 'notes', 'status', 'actions']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['patientName', 'doctorName', 'date', 'startTime', 'endTime', 'notes', 'status', 'actions']"></tr>
+  </table> -->
+<!-- </div> -->
